@@ -19,6 +19,8 @@
 		2A2B96A729EBC14300BFAA9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A2B96A529EBC14300BFAA9A /* LaunchScreen.storyboard */; };
 		2A2B96AF29EBC48500BFAA9A /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B96AE29EBC48500BFAA9A /* LoginScreen.swift */; };
 		2ACA21672A01FB9A0017C83F /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACA21662A01FB9A0017C83F /* AlertController.swift */; };
+		2AF9F9E72A0219C4003453F1 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF9F9E62A0219C4003453F1 /* TabBarVC.swift */; };
+		2AF9F9ED2A021A8E003453F1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF9F9EC2A021A8E003453F1 /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		2A2B96A829EBC14300BFAA9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A2B96AE29EBC48500BFAA9A /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		2ACA21662A01FB9A0017C83F /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		2AF9F9E62A0219C4003453F1 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		2AF9F9EC2A021A8E003453F1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +106,10 @@
 		2A2B969929EBC14100BFAA9A /* AppBackFront */ = {
 			isa = PBXGroup;
 			children = (
+				2AF9F9E82A021A13003453F1 /* Feature */,
+				2AF9F9E52A0219A7003453F1 /* TabBarController */,
 				2ACA21652A01FB8C0017C83F /* Alert */,
 				2A1ACEC12A01CFE5004221C0 /* Utils */,
-				2A1D96F02A00BE18003C185E /* Login */,
 				2A2B969A29EBC14100BFAA9A /* AppDelegate.swift */,
 				2A2B969C29EBC14100BFAA9A /* SceneDelegate.swift */,
 				2A2B96A329EBC14300BFAA9A /* Assets.xcassets */,
@@ -121,6 +126,31 @@
 				2ACA21662A01FB9A0017C83F /* AlertController.swift */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		2AF9F9E52A0219A7003453F1 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				2AF9F9E62A0219C4003453F1 /* TabBarVC.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		2AF9F9E82A021A13003453F1 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				2AF9F9E92A021A40003453F1 /* Home */,
+				2A1D96F02A00BE18003C185E /* Login */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		2AF9F9E92A021A40003453F1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2AF9F9EC2A021A8E003453F1 /* HomeVC.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,9 +234,11 @@
 				2A2B969F29EBC14100BFAA9A /* LoginVC.swift in Sources */,
 				2A2B96AF29EBC48500BFAA9A /* LoginScreen.swift in Sources */,
 				2A2B969B29EBC14100BFAA9A /* AppDelegate.swift in Sources */,
+				2AF9F9ED2A021A8E003453F1 /* HomeVC.swift in Sources */,
 				2A1ACEC42A01D02D004221C0 /* UIViewController+Extension.swift in Sources */,
 				2ACA21672A01FB9A0017C83F /* AlertController.swift in Sources */,
 				2A1ACEC72A01D8BE004221C0 /* String+Extension.swift in Sources */,
+				2AF9F9E72A0219C4003453F1 /* TabBarVC.swift in Sources */,
 				2A2B969D29EBC14100BFAA9A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
