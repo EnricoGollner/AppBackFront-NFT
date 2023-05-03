@@ -21,6 +21,7 @@
 		2ACA21672A01FB9A0017C83F /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACA21662A01FB9A0017C83F /* AlertController.swift */; };
 		2AF9F9E72A0219C4003453F1 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF9F9E62A0219C4003453F1 /* TabBarVC.swift */; };
 		2AF9F9ED2A021A8E003453F1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF9F9EC2A021A8E003453F1 /* HomeVC.swift */; };
+		2AF9F9F02A021E11003453F1 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF9F9EF2A021E11003453F1 /* HomeScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		2ACA21662A01FB9A0017C83F /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		2AF9F9E62A0219C4003453F1 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		2AF9F9EC2A021A8E003453F1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		2AF9F9EF2A021E11003453F1 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,9 +150,18 @@
 		2AF9F9E92A021A40003453F1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2AF9F9EE2A021DFD003453F1 /* Screen */,
 				2AF9F9EC2A021A8E003453F1 /* HomeVC.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		2AF9F9EE2A021DFD003453F1 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				2AF9F9EF2A021E11003453F1 /* HomeScreen.swift */,
+			);
+			path = Screen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +248,7 @@
 				2AF9F9ED2A021A8E003453F1 /* HomeVC.swift in Sources */,
 				2A1ACEC42A01D02D004221C0 /* UIViewController+Extension.swift in Sources */,
 				2ACA21672A01FB9A0017C83F /* AlertController.swift in Sources */,
+				2AF9F9F02A021E11003453F1 /* HomeScreen.swift in Sources */,
 				2A1ACEC72A01D8BE004221C0 /* String+Extension.swift in Sources */,
 				2AF9F9E72A0219C4003453F1 /* TabBarVC.swift in Sources */,
 				2A2B969D29EBC14100BFAA9A /* SceneDelegate.swift in Sources */,
