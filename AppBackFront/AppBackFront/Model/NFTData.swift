@@ -10,12 +10,12 @@ import Foundation
 
 struct NFTData: Codable {
     var logoImage: LogoImage?
-    var filterNft: [FilterNft]?
+    var filterListNft: [FilterNft]?
     var nftList: [Nft]?
 
     enum CodingKeys: String, CodingKey {
         case logoImage = "logo_image"
-        case filterNft = "filter_nft"
+        case filterListNft = "filter_nft"
         case nftList = "nft_list"
     }
 }
