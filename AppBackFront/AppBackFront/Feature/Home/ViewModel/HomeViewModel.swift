@@ -14,7 +14,6 @@ protocol HomeViewModelDelegate: AnyObject {
 
 class HomeViewModel {
     
-    
     private let service: HomeService = HomeService()
     private var nftData: NFTData?
     weak private var delegate: HomeViewModelDelegate?
@@ -49,6 +48,20 @@ class HomeViewModel {
                 }
             }
         }
+    }
+    
+    // MARK: - FilterCollectionView
+    
+    public var numberOfItemsInSection: Int {
+        return nftData?.filterListNft?.count ?? 0
+    }
+    
+    public func loadCurrentFilterNFT(indexPath: IndexPath) -> FilterNft {
+        return nftData?.filterListNft?[indexPath.row] ?? FilterNft()
+    }
+    
+    public var sizeForItem: CGSize {
+        return CGSize(width: 100, height: 34)
     }
     
 }
