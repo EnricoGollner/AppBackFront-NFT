@@ -41,7 +41,7 @@ class HomeViewModel {
             service.getHome { result, failure in
                 if let result {
                     self.nftData = result
-                    self.delegate?.success()  // Assíncrona
+                    self.delegate?.success()
                     print("SUCCES -> \(#function)")
                 } else {
                     print(failure as Any)

@@ -37,7 +37,7 @@ class HomeScreen: UIView {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = UIColor(red: 26/255, green: 26/266, blue: 1/255, alpha: 1.0)
-        // TO-DO: REGISTER
+        collectionView.register(NFTFilterCollectionViewCell.self, forCellWithReuseIdentifier: NFTFilterCollectionViewCell.identifier)
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)  // como o padding - a célula terá a distância setada nas Edges
         layout.scrollDirection = .horizontal
