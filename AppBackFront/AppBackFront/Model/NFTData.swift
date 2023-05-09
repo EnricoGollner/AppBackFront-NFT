@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct NFTData: Codable {
     var logoImage: LogoImage?
     var filterListNft: [FilterNft]?
@@ -43,7 +42,7 @@ struct Nft: Codable {
     var nftPrice: Double?
     var nftID: Int?
     var nftNameImage, nftDescription: String?
-    var titleLatestDeals: String
+    var titleLatestDeals: String?
     var latestDeals: [LatestDeal]?
 
     enum CodingKeys: String, CodingKey {

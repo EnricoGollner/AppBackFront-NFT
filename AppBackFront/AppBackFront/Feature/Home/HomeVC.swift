@@ -32,7 +32,11 @@ class HomeVC: UIViewController {
 extension HomeVC: HomeViewModelDelegate {
     func success() {
         print("Success")
-        screen?.configCollectionViewProtocols(delegate: self, dataSource: self)  // processo assíncrono, devemos assinar o protocolo apenas quando a requisição terminar
+        DispatchQueue.main.async {
+            self.screen?.configCollectionViewProtocols(delegate: self, dataSource: self)  // processo assíncrono, devemos assinar o protocolo apenas quando a requisição terminar
+            self.screen?.configTableViewProtocols(delegate: self, dataSource: self)
+            self.screen?.tableView.reloadData()
+        }
     }
     
     func error() {
@@ -53,5 +57,21 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return viewModel.sizeForItem
+    }
+}
+
+extension HomeVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.numberOfItemsInSection
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: NFTTableViewCell.identifier, for: indexPath) as? NFTTableViewCell
+        cell?.setUpCell(data: viewModel.loadCurrentNft(indexPath: indexPath))
+        return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        viewModel.heightForRow
     }
 }

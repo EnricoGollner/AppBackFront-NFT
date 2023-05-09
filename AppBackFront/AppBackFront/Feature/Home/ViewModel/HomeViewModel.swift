@@ -64,4 +64,18 @@ class HomeViewModel {
         return CGSize(width: 100, height: 34)
     }
     
+    // MARK: - NFTTableViewCell
+    
+    public var numberOfRowsInSection: Int {
+        return nftData?.nftList?.count ?? 0
+    }
+    
+    public func loadCurrentNft(indexPath: IndexPath) -> Nft {
+        return nftData?.nftList?[indexPath.row] ?? Nft()
+    }
+    
+    public var heightForRow: CGFloat {
+        return 360
+    }
+    
 }
