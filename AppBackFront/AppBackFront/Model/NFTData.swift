@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - NFTData
 struct NFTData: Codable {
     var logoImage: LogoImage?
     var filterListNft: [FilterNft]?
@@ -58,21 +59,19 @@ struct Nft: Codable {
         case titleLatestDeals = "title_latest_deals"
         case latestDeals = "latest_deals"
     }
-    
-    // MARK: - LatestDeal
-    struct LatestDeal: Codable {
-        var userName: String?
-        var userImage: String?
-        var nftPrice: Double?
-        var lastAccess: String?
-
-        enum CodingKeys: String, CodingKey {
-            case userName = "user_name"
-            case userImage = "user_image"
-            case nftPrice = "nft_price"
-            case lastAccess = "last_access"
-        }
-    }
-
 }
 
+// MARK: - LatestDeal
+struct LatestDeal: Codable {
+    var userName: String?
+    var userImage: String?
+    var nftPrice: Double?
+    var lastAccess: String?
+
+    enum CodingKeys: String, CodingKey {
+        case userName = "user_name"
+        case userImage = "user_image"
+        case nftPrice = "nft_price"
+        case lastAccess = "last_access"
+    }
+}
