@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum NameCellNftDetailVC: Int {
+    case nftImage = 0
+    case description = 1
+}
+
 class NftDetailVC: UIViewController {
     
     private var screen: NftDetailScreen?
@@ -39,12 +44,35 @@ extension NftDetailVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: NftImageTableViewCell.identifier, for: indexPath) as? NftImageTableViewCell
-        cell?.setUpCell(urlImage: viewModel.nftImage)
-        return cell ?? UITableViewCell()
+        switch NameCellNftDetailVC(rawValue: indexPath.row) {
+            
+        case .nftImage:
+            let cell = tableView.dequeueReusableCell(withIdentifier: NftImageTableViewCell.identifier, for: indexPath) as? NftImageTableViewCell
+            cell?.setUpCell(urlImage: viewModel.nftImage, delegate: self)
+            return cell ?? UITableViewCell()
+            
+        case .description:
+            let cell = tableView.dequeueReusableCell(withIdentifier: NftDescriptionTableViewCell.identifier, for: indexPath) as? NftDescriptionTableViewCell
+            cell?.setUpCell(id: viewModel.idNft, title: viewModel.titleNft, description: viewModel.descriptionNft)
+            return cell ?? UITableViewCell()
+            
+        default:
+            return UITableViewCell()
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 400
+    }
+}
+
+extension NftDetailVC: NftImageTableViewCellScreenDelegate {
+    func tappedCloseButton() {
+        self.dismiss(animated: true)
+    }
+    
+    func tappedMagnifyingGlassButton() {
+        print(#function)
     }
 }
