@@ -6,15 +6,16 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class NftImageTableViewCell: UITableViewCell {
     
     static let identifier: String = String(describing: NftImageTableViewCell.self)
     
-    private lazy var screen: NftImageViewCellScreen = {
-        let screen = NftImageViewCellScreen()
-        screen.translatesAutoresizingMaskIntoConstraints = false
-        return screen
+    private lazy var screen: NftImageTableViewCellScreen = {
+        let view = NftImageTableViewCellScreen()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -40,8 +41,9 @@ class NftImageTableViewCell: UITableViewCell {
         ])
     }
     
-    public func setUpCell() {
-        
+    public func setUpCell(urlImage: String) {
+        guard let url = URL(string: urlImage) else { return }
+        screen.nftImageView.af.setImage(withURL: url)
     }
     
     
