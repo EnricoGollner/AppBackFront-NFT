@@ -33,4 +33,16 @@ class NftDetailViewModel {
     public var descriptionNft: String {
         return nft.nftDescription ?? ""
     }
+    
+    public func heightForRow(indexPath: IndexPath, width: CGFloat) -> CGFloat{
+        switch NameCellNftDetailVC(rawValue: indexPath.row) {
+        case .nftImage:
+            return 400
+        case .description:
+            var totalLabel = descriptionNft.height(withConstrainedWidth: width - 40, font: .systemFont(ofSize: 18))
+            return 5 + totalLabel + 5 + 30 + 5 + 24 + 10 + 10
+        default:
+            return 0
+        }
+    }
 }
