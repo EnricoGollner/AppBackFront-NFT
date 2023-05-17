@@ -17,7 +17,8 @@ class TabBarVC: UITabBarController {
     private func setUpTabBar() {
         let home = UINavigationController(rootViewController: HomeVC())
         let wallet = UINavigationController(rootViewController: WalletVC())
-        setViewControllers([home, wallet], animated: true)
+        let profile = UINavigationController(rootViewController: ProfileVC())
+        setViewControllers([home, wallet, profile], animated: true)
         tabBar.isTranslucent = false
         tabBar.tintColor = UIColor(red: 130/255, green: 26/255, blue: 201/255, alpha: 1.0)
         
@@ -30,5 +31,6 @@ class TabBarVC: UITabBarController {
         guard let items = tabBar.items else { return }
         items[0].image = UIImage(systemName: "house")
         items[1].image = UIImage(systemName: "wallet.pass")
+        items[2].image = UIImage(systemName: "person")
     }
 }

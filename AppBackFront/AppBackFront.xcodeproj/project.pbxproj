@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A00687A2A145D2B000EF6BD /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0068792A145D2B000EF6BD /* ProfileVC.swift */; };
+		2A00687D2A145D8E000EF6BD /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A00687C2A145D8E000EF6BD /* ProfileScreen.swift */; };
+		2A0068832A146025000EF6BD /* ProfileImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0068822A146025000EF6BD /* ProfileImageTableViewCell.swift */; };
+		2A0068852A14603A000EF6BD /* ProfileImageTableViewCellScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0068842A14603A000EF6BD /* ProfileImageTableViewCellScreen.swift */; };
 		2A1ACEC42A01D02D004221C0 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1ACEC32A01D02D004221C0 /* UIViewController+Extension.swift */; };
 		2A1ACEC72A01D8BE004221C0 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1ACEC62A01D8BE004221C0 /* String+Extension.swift */; };
 		2A1D96F32A00BFC2003C185E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A1D96F22A00BFC2003C185E /* GoogleService-Info.plist */; };
@@ -64,6 +68,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A0068792A145D2B000EF6BD /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		2A00687C2A145D8E000EF6BD /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		2A0068822A146025000EF6BD /* ProfileImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageTableViewCell.swift; sourceTree = "<group>"; };
+		2A0068842A14603A000EF6BD /* ProfileImageTableViewCellScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageTableViewCellScreen.swift; sourceTree = "<group>"; };
 		2A1ACEC32A01D02D004221C0 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		2A1ACEC62A01D8BE004221C0 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		2A1D96F22A00BFC2003C185E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -136,6 +144,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A0068782A145D0D000EF6BD /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				2A00687E2A145DA1000EF6BD /* ViewModel */,
+				2A00687B2A145D30000EF6BD /* Screen */,
+				2A0068792A145D2B000EF6BD /* ProfileVC.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		2A00687B2A145D30000EF6BD /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				2A00687C2A145D8E000EF6BD /* ProfileScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		2A00687E2A145DA1000EF6BD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2A00687F2A145FE0000EF6BD /* ProfileImageTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2A0068802A145FF0000EF6BD /* Screen */,
+				2A0068822A146025000EF6BD /* ProfileImageTableViewCell.swift */,
+			);
+			path = ProfileImageTableViewCell;
+			sourceTree = "<group>";
+		};
+		2A0068802A145FF0000EF6BD /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				2A0068842A14603A000EF6BD /* ProfileImageTableViewCellScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
 		2A1ACEC12A01CFE5004221C0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +374,7 @@
 		2A6478B52A07DE7A004796F2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				2A00687F2A145FE0000EF6BD /* ProfileImageTableViewCell */,
 				2AC537B72A144C150032FEB5 /* ListOfTransactionTableViewCell */,
 				2AC537AE2A1447F40032FEB5 /* LatestTransactionsTableViewCell */,
 				2A2FBD7B2A1311F700D8E0BE /* QuotationEthTableViewCell */,
@@ -537,6 +588,7 @@
 		2AF9F9E82A021A13003453F1 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				2A0068782A145D0D000EF6BD /* Profile */,
 				2A2FBD6D2A1301AA00D8E0BE /* Wallet */,
 				2A2FBD672A12F9E900D8E0BE /* MagnifyingGlass */,
 				2A46800D2A0DBFD700F4F6C7 /* NftDetail */,
@@ -721,7 +773,9 @@
 				2AF9F9ED2A021A8E003453F1 /* HomeVC.swift in Sources */,
 				2A2FBD7A2A130CD000D8E0BE /* WalletData.swift in Sources */,
 				2A1ACEC42A01D02D004221C0 /* UIViewController+Extension.swift in Sources */,
+				2A0068852A14603A000EF6BD /* ProfileImageTableViewCellScreen.swift in Sources */,
 				2A2FBD6C2A12FB5600D8E0BE /* MagnifyingGlassScreen.swift in Sources */,
+				2A00687A2A145D2B000EF6BD /* ProfileVC.swift in Sources */,
 				2AC0A7A12A02579D00A7F9FB /* GenericService.swift in Sources */,
 				2A46801C2A0DD12E00F4F6C7 /* NftImageViewCellScreen.swift in Sources */,
 				2AAD43AA2A0E703F00EB5D6A /* NftDescriptionTableViewCellScreen.swift in Sources */,
@@ -735,7 +789,9 @@
 				2A4680192A0DD0BB00F4F6C7 /* NftImageTableViewCell.swift in Sources */,
 				2AC0A7A92A025A0100A7F9FB /* NFTData.swift in Sources */,
 				2AC537B92A144C2D0032FEB5 /* ListOfTransactionTableViewCell.swift in Sources */,
+				2A0068832A146025000EF6BD /* ProfileImageTableViewCell.swift in Sources */,
 				2A1ACEC72A01D8BE004221C0 /* String+Extension.swift in Sources */,
+				2A00687D2A145D8E000EF6BD /* ProfileScreen.swift in Sources */,
 				2AC537B02A1448180032FEB5 /* LatestTransactionsTableViewCell.swift in Sources */,
 				2A6D24142A0FDE1F001A2943 /* LatestDealTableViewCellViewModel.swift in Sources */,
 				2A4680162A0DC94800F4F6C7 /* NftDetailViewModel.swift in Sources */,
