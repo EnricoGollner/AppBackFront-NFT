@@ -7,7 +7,10 @@
 
 import UIKit
 
-import UIKit
+enum ProfileNameCell: Int {
+    case profileImage = 0
+    case profileDetails = 1
+}
 
 class ProfileVC: UIViewController {
     
@@ -31,15 +34,30 @@ class ProfileVC: UIViewController {
 
 extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ProfileImageTableViewCell.identifier, for: indexPath) as? ProfileImageTableViewCell
-        return cell ?? UITableViewCell()
+        switch ProfileNameCell(rawValue: indexPath.row) {
+        case .profileImage:
+            let cell = tableView.dequeueReusableCell(withIdentifier: ProfileImageTableViewCell.identifier, for: indexPath) as? ProfileImageTableViewCell
+            return cell ?? UITableViewCell()
+        case .profileDetails:
+            let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.identifier, for: indexPath) as? ProfileTableViewCell
+            cell?.setUpCell(delegate: self)
+            return cell ?? UITableViewCell()
+        default:
+            return UITableViewCell()
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 280
+    }
+}
+
+extension ProfileVC: ProfileTableViewCellScreenDelegate {
+    func tappedExitAppButton() {
+        self.navigationController?.popViewController(animated: true)
     }
 }

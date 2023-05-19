@@ -62,8 +62,8 @@ extension LoginVC: LoginScreenProtocol {
                     print("Pressionou o botão")
                 }
             } else {
-                // sucesso
-                print("Loged-in!")
+                print(#function)
+                self.navigationController?.pushViewController(TabBarVC(), animated: true)
             }
         })
     }
