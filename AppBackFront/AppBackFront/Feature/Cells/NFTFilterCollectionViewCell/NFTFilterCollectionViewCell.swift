@@ -19,6 +19,8 @@ class NFTFilterCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        addViews()
+        configConstraints()
     }
     
     required init?(coder: NSCoder) {

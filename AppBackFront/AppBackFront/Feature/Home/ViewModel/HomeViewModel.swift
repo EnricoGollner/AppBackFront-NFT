@@ -14,9 +14,9 @@ protocol HomeViewModelDelegate: AnyObject {
 
 class HomeViewModel {
     
-    
     private let service: HomeService = HomeService()
     private var nftData: NFTData?
+    private var searchNftData: NFTData?
     weak private var delegate: HomeViewModelDelegate?
     
     public func delegate(delegate: HomeViewModelDelegate) {
@@ -24,14 +24,13 @@ class HomeViewModel {
     }
     
     public func fetchRequest(_ type: TypeFetch) {
-        
         switch type {
         case .mock:
             service.getHomeFromJSON { result, failure in
                 if let result {
                     self.nftData = result
-                    self.delegate?.success()  // Assíncrona
-                    print("SUCCESS -> \(#function)")
+                    self.searchNftData = result
+                    self.delegate?.success()
                 } else {
                     print(failure as Any)
                     self.delegate?.error()
@@ -41,14 +40,81 @@ class HomeViewModel {
             service.getHome { result, failure in
                 if let result {
                     self.nftData = result
+                    self.searchNftData = result
                     self.delegate?.success()
-                    print("SUCCES -> \(#function)")
                 } else {
                     print(failure as Any)
                     self.delegate?.error()
                 }
             }
         }
+    }
+    
+    // MARK: - FilterCollectionView
+    
+    public var numberOfItemsInSection: Int {
+        return searchNftData?.filterListNft?.count ?? 0
+    }
+    
+    public func loadCurrentFilterNFT(indexPath: IndexPath) -> FilterNft {
+        return searchNftData?.filterListNft?[indexPath.row] ?? FilterNft()
+    }
+    
+    public var sizeForItem: CGSize {
+        return CGSize(width: 100, height: 34)
+    }
+    
+    // MARK: - NFTTableViewCell
+    
+    public var numberOfRowsInSection: Int {
+        return searchNftData?.nftList?.count ?? 0
+    }
+    
+    public func loadCurrentNft(indexPath: IndexPath) -> Nft {
+        return searchNftData?.nftList?[indexPath.row] ?? Nft()
+    }
+    
+    public var heightForRow: CGFloat {
+        return 360
+    }
+    
+    // MARK: - Filter
+    
+    var typeFilter: Int? {
+        return searchNftData?.filterListNft?.first(where: { $0.isSelected == true})?.id
+    }
+    
+    public func filterSearchText(_ text: String) {
+        var nftList = [Nft]()
+        
+        if typeFilter == 0 {  // Todos
+            nftList = nftData?.nftList ?? []
+        } else {
+            nftList = nftData?.nftList?.filter({$0.type == typeFilter ?? 0}) ?? []
+        }
+        
+        if text.isEmpty {
+            searchNftData?.nftList = nftList
+        } else {
+            searchNftData?.nftList = nftList.filter({ nft in
+                return nft.userName?.lowercased().contains(text.lowercased()) ?? false
+            })
+        }
+    }
+    
+    public func setFilter(indexPath: IndexPath, searchText: String) {
+        var filterNft = [FilterNft]()
+        for (index, value) in (searchNftData?.filterListNft ?? []).enumerated() {
+            var type = value  // próprio objeto de FilterNft
+            if index == indexPath.row {
+                type.isSelected = true
+            } else {
+                type.isSelected = false
+            }
+            filterNft.append(type)
+        }
+        searchNftData?.filterListNft = filterNft
+        filterSearchText(searchText)
     }
     
 }
